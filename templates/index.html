@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Troubleshooting Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IT Troubleshooting Assistant</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="active">Home</a>
+                <a href="{{ url_for('history') }}">Issue History</a>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="issue-form">
+                <h2>Describe Your IT Issue</h2>
+                <p>Provide details about the problem you're experiencing:</p>
+                
+                <div class="form-group">
+                    <textarea id="issue-description" placeholder="E.g., My computer keeps freezing when I open multiple browser tabs. I'm using Windows 10 with 8GB RAM..."></textarea>
+                </div>
+                
+                <button id="diagnose-btn">Get Diagnosis</button>
+                
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing your issue...</p>
+                </div>
+            </section>
+            
+            <section id="diagnosis-result" class="hidden">
+                <h2>Diagnosis & Solution</h2>
+                <div id="diagnosis-content"></div>
+                
+                <div class="resolution-form">
+                    <h3>Was this helpful?</h3>
+                    <textarea id="resolution-notes" placeholder="Add notes about how you resolved the issue..."></textarea>
+                    <button id="mark-resolved">Mark as Resolved</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>AI-Powered IT Troubleshooting Assistant &copy; 2023</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
