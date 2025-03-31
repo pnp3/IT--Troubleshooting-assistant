@@ -71,4 +71,4 @@ MIT
 
 ## Author
 
-Your Name
+Prince Padi
